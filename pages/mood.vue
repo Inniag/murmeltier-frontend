@@ -22,7 +22,9 @@
             align="center"
             justify="center"
             >
-            <div class="display-3">{{ slide }} Slide</div>
+            <!-- <div class="display-3">{{ slide }} Slide</div> -->
+            <img width="200px" height="auto" :src="require('../assets/mood-'+(i+1)+'.svg')" />
+            <!-- <v-img :src="require('../assets/sample_image.jpg')"/> -->
             </v-row>
         </v-sheet>
         </v-carousel-item>
