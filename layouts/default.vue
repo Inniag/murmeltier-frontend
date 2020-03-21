@@ -59,12 +59,20 @@
     grow
     color="green"
   >
-    <v-btn>
+    <v-btn
+      to="/mood"
+      router
+      exact
+    >
       <span>Stimmung</span>
       <v-icon>mdi-thought-bubble-outline</v-icon>
     </v-btn>
 
-    <v-btn>
+    <v-btn
+      to="/"
+      router
+      exact
+    >
       <span>Radar</span>
       <v-icon>mdi-radar</v-icon>
     </v-btn>
