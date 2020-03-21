@@ -4,7 +4,7 @@
     <v-carousel
         :cycle="false"
         :continuous="false"
-        height="400"
+        height="300px"
         hide-delimiter-background
         show-arrows-on-hover
         v-model="mood"
@@ -34,14 +34,29 @@
         placeholder="Beschreibe deine Stimmung/Situation in einem Hashtag!"
         v-model="hashtag"
     ></v-text-field>
-
+<!-- 
     <div class="text-center">
-        <v-btn class="ma-2" outlined color="indigo" dark>Abbrechen</v-btn>
+        <v-btn width="60%" outlined color="indigo" dark>Abbrechen</v-btn>
 
-        <v-btn class="ma-2" color="success">
-            OK
-        </v-btn>
-    </div>
+        <v-btn width="60%"  color="success">Teilen</v-btn>
+    </div> -->
+
+    <v-col class="text-center" cols="12" sm="4">
+      <!-- <div class="my-2">
+        <v-btn depressed small>Normal</v-btn>
+      </div>
+      <div class="my-2">
+        <v-btn depressed small color="primary">Primary</v-btn>
+      </div> -->
+        <!-- <v-btn class="ma-2" outlined color="indigo" dark>Abbrechen</v-btn> -->
+        <div class="my-2">
+            <v-btn  width="130px" outlined color="indigo" dark>Abbrechen</v-btn>
+        </div>
+        <!-- <v-btn class="ma-2" color="success">Teilen</v-btn> -->
+        <div class="my-2">
+            <v-btn width="130px" color="success">Teilen</v-btn>
+        </div>
+    </v-col>
    </v-container>
 </template>
 
