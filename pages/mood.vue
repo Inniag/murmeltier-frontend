@@ -54,7 +54,7 @@
         </div>
         <!-- <v-btn class="ma-2" color="success">Teilen</v-btn> -->
         <div class="my-2">
-            <v-btn width="130px" color="success">Teilen</v-btn>
+            <v-btn width="130px" color="success">Eintragen</v-btn>
         </div>
     </v-col>
    </v-container>
