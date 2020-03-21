@@ -10,7 +10,7 @@
       <v-list>
         
 
-        <!-- <v-list-item
+        <v-list-item
           v-for="(item, i) in items"
           :key="i"
           :to="item.to"
@@ -25,7 +25,7 @@
           </v-list-item-content>
         </v-list-item>
 
-        <v-list-item
+        <!-- <v-list-item
           @click="startGame"
         >
 
@@ -106,6 +106,16 @@ export default {
         //   title: 'My games',
         //   to: '/history'
         // },
+        {
+          icon: 'mdi-information-outline',
+          title: 'Info',
+          to: '/about'
+        },
+        {
+          icon: 'mdi-lock',
+          title: 'Datenschutz',
+          to: '/privacy'
+        },
       ],
       miniVariant: false,
       right: true,
