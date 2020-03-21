@@ -1,7 +1,6 @@
 <template>
     <v-container fluid>
 
-  <h1>Hallo! mood.</h1>
     <v-carousel
         :cycle="false"
         :continuous="false"
@@ -28,7 +27,12 @@
         </v-carousel-item>
     </v-carousel>
 
-    <v-text-field :rules="rules"></v-text-field>
+    <!-- <v-text-field :rules="rules"></v-text-field> -->
+    <v-text-field
+        :rules="rules"
+        label="Hashtag"
+        placeholder="Beschreibe deine Stimmung/Situation in einem Hashtag!"
+    ></v-text-field>
 
     <div class="text-center">
         <v-btn class="ma-2" outlined color="indigo" dark>Abbrechen</v-btn>

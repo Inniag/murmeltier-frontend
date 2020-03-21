@@ -54,7 +54,8 @@
       </v-container>
     </v-content>
     
-          <v-bottom-navigation
+  <v-bottom-navigation
+    fixed
     grow
     color="green"
   >
