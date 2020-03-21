@@ -120,7 +120,7 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Murmeltier'
+      title: 'Murmel'
     }
   },
   methods: {
