@@ -73,7 +73,7 @@
       router
       exact
     >
-      <span>Radar</span>
+      <span>Sonar</span>
       <v-icon>mdi-radar</v-icon>
     </v-btn>
   </v-bottom-navigation>
