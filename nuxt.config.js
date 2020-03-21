@@ -1,6 +1,9 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
+  server: {
+    port: 7000, // default: 3000
+  },
   mode: 'spa',
   /*
   ** Headers of the page
