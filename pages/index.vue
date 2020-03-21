@@ -1,82 +1,13 @@
 <template>
-  <v-layout
-    column
-    justify-center
-    align-center
-  >
-    <v-flex
-      xs12
-      sm8
-      md6
-    >
-      <div class="text-center">
-        <logo />
-        <vuetify-logo />
-      </div>
-      <v-card>
-        <v-card-title class="headline">
-          Welcome to the Vuetify + Nuxt.js template
-        </v-card-title>
-        <v-card-text>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-          <p>
-            For more information on Vuetify, check out the <a
-              href="https://vuetifyjs.com"
-              target="_blank"
-            >
-              documentation
-            </a>.
-          </p>
-          <p>
-            If you have questions, please join the official <a
-              href="https://chat.vuetifyjs.com/"
-              target="_blank"
-              title="chat"
-            >
-              discord
-            </a>.
-          </p>
-          <p>
-            Find a bug? Report it on the github <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              title="contribute"
-            >
-              issue board
-            </a>.
-          </p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
+    <v-container fluid>
+
+    <div class="radar-container">
+          <div class='radar'>
+            <!-- <div class='sweep'></div> -->
           </div>
-          <hr class="my-3">
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-          >
-            Nuxt Documentation
-          </a>
-          <br>
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-          >
-            Nuxt GitHub
-          </a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn
-            color="primary"
-            nuxt
-            to="/inspire"
-          >
-            Continue
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-flex>
-  </v-layout>
+    </div>
+      
+   </v-container>
 </template>
 
 <script>
@@ -90,3 +21,136 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="scss">
+ $green: #20ff4d;
+$black: #000000;
+$gray:  #eee;
+
+$grid-opacity: 0.15;
+
+* {
+    box-sizing: border-box;
+}
+
+
+
+html {
+    height: 100%;
+    background-color: #111;
+    font-size: 10px;
+}
+
+body {
+    background-image:
+        linear-gradient(0deg, transparent 24%, rgba($green, $grid-opacity) 25%, rgba($green, $grid-opacity) 26%, transparent 27%, transparent 74%, rgba($green, $grid-opacity) 75%, rgba($green, $grid-opacity) 76%, transparent 77%, transparent),
+        linear-gradient(90deg, transparent 24%, rgba($green, $grid-opacity) 25%, rgba($green, $grid-opacity) 26%, transparent 27%, transparent 74%, rgba($green, $grid-opacity) 75%, rgba($green, $grid-opacity) 76%, transparent 77%, transparent);
+    background-size: 7rem 7rem;
+    background-position: -5.2rem -5.2rem;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    font-size: 1.6rem;
+}
+
+.radar-container {
+  height: 50%;
+  max-height: 200px;
+}
+
+.radar {
+    background:
+        -webkit-radial-gradient(center, rgba($green, 0.3) 0%, rgba($green, 0) 75%), // background glow
+        -webkit-repeating-radial-gradient(rgba($green, 0) 5.8%, rgba($green, 0) 18%, rgba($green, 1) 18.6%, rgba($green, 0) 18.9%), // concentric circles
+        -webkit-linear-gradient(90deg, rgba($green, 0) 49.5%, rgba($green, 1) 50%, rgba($green, 1) 50%, rgba($green, 0) 50.2%), // center line - vertical
+        -webkit-linear-gradient(0deg, rgba($green, 0) 49.5%, rgba($green, 1) 50%, rgba($green, 1) 50%, rgba($green, 0) 50.2%);
+    
+    // background:
+    //     radial-gradient(center, rgba($green, 0.3) 0%, rgba($green, 0) 75%), // background glow
+    //     repeating-radial-gradient(rgba($green, 0) 5.8%, rgba($green, 0) 18%, rgba($green, 1) 18.6%, rgba($green, 0) 18.9%), // concentric circles
+    //     linear-gradient(90deg, rgba($green, 0) 49.5%, rgba($green, 1) 50%, rgba($green, 1) 50%, rgba($green, 0) 50.2%), // center line - vertical
+    //     linear-gradient(0deg, rgba($green, 0) 49.5%, rgba($green, 1) 50%, rgba($green, 1) 50%, rgba($green, 0) 50.2%); // center line - horizontal
+    width: 60vw;
+    height: 60vw;
+    max-height: 75vh;
+    max-width: 75vh;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    margin-top: 33%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 0.2rem solid $green;
+    overflow: hidden;
+
+    &:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        animation: blips 5s infinite;
+        animation-timing-function: linear;
+        animation-delay: 1.4s;
+    }
+
+    &:after {
+        content: ' ';
+        display: block;
+        background-image: linear-gradient( 44deg, rgba(0, 255, 51, 0) 50%, rgba(0, 255, 51, 1) 100%);
+        width: 50%;
+        height: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: radar-beam 5s infinite;
+        animation-timing-function: linear;
+        transform-origin: bottom right;
+        border-radius: 100% 0 0 0;
+    }
+}
+
+@keyframes radar-beam {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+// @keyframes blips {
+//     14% {
+//         background:
+//             radial-gradient(2vmin circle at 75% 70%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%);
+//     }
+//     14.0002% {
+//         background:
+//             radial-gradient(2vmin circle at 75% 70%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%),
+//             radial-gradient(2vmin circle at 63% 72%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%);
+//     }
+//     25% {
+//         background:
+//             radial-gradient(2vmin circle at 75% 70%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%),
+//             radial-gradient(2vmin circle at 63% 72%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%),
+//             radial-gradient(2vmin circle at 56% 86%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%);
+//     }
+//     26% {
+//         background:
+//             radial-gradient(2vmin circle at 75% 70%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%),
+//             radial-gradient(2vmin circle at 63% 72%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%),
+//             radial-gradient(2vmin circle at 56% 86%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%);
+//         opacity: 1;
+//     }
+//     100% {
+//         background:
+//             radial-gradient(2vmin circle at 75% 70%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%),
+//             radial-gradient(2vmin circle at 63% 72%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%),
+//             radial-gradient(2vmin circle at 56% 86%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%);
+//         opacity: 0;
+//     }
+// }
+</style>

@@ -88,16 +88,16 @@ export default {
       drawer: false,
       fixed: false,
       items: [
-        {
-          icon: 'mdi-apps',
-          title: 'Home',
-          to: '/'
-        },
-        {
-          icon: 'mdi-history',
-          title: 'My games',
-          to: '/history'
-        },
+        // {
+        //   icon: 'mdi-apps',
+        //   title: 'Home',
+        //   to: '/'
+        // },
+        // {
+        //   icon: 'mdi-history',
+        //   title: 'My games',
+        //   to: '/history'
+        // },
       ],
       miniVariant: false,
       right: true,
