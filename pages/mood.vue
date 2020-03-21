@@ -3,7 +3,8 @@
 
   <h1>Hallo! mood.</h1>
     <v-carousel
-        cycle="false"
+        :cycle="false"
+        :continuous="false"
         height="400"
         hide-delimiter-background
         show-arrows-on-hover

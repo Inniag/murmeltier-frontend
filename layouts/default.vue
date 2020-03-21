@@ -55,7 +55,6 @@
     </v-content>
     
           <v-bottom-navigation
-    :value="activeBtn"
     grow
     color="green"
   >
