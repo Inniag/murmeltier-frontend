@@ -7,7 +7,7 @@
         height="400"
         hide-delimiter-background
         show-arrows-on-hover
-        v-model="model"
+        v-model="mood"
     >
         <v-carousel-item
         v-for="(slide, i) in slides"
@@ -32,6 +32,7 @@
         :rules="rules"
         label="Hashtag"
         placeholder="Beschreibe deine Stimmung/Situation in einem Hashtag!"
+        v-model="hashtag"
     ></v-text-field>
 
     <div class="text-center">
@@ -58,7 +59,8 @@ export default {
                 'Fourth',
                 'Fifth',
             ],
-            model: 2,
+            hashtag: "",
+            mood: 2,
             rules: [
                 value => !!value || 'Required.',
                 value => (value || '').length <= 60 || 'Maximal 60 Zeichen',
