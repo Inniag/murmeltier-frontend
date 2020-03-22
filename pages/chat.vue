@@ -14,7 +14,6 @@
         <v-btn width="130px" light color="primary">Senden</v-btn>
       </div>
     </v-col>
-
   </v-container>
 </template>
 
@@ -46,7 +45,7 @@
 </style>
 
 <script>
-import firebase from 'firebase'
+import { firebase, chatRef } from '~/plugins/firechat'
 
 export default {
   components: {},
@@ -55,31 +54,15 @@ export default {
   },
 
   mounted() {
-    if (firebase.apps.length === 0) {
-      var firebaseConfig = {
-        apiKey: 'AIzaSyBJgvkJ2eOxy9bUQPY1hGjfrLv-L5HmoiE',
-        authDomain: 'murmeltier-ec59c.firebaseapp.com',
-        databaseURL: 'https://murmeltier-ec59c.firebaseio.com',
-        projectId: 'murmeltier-ec59c',
-        storageBucket: 'murmeltier-ec59c.appspot.com',
-        messagingSenderId: '902400849362',
-        appId: '1:902400849362:web:0ee68e0efb1a68ded5040b'
-      }
-      firebase.initializeApp(firebaseConfig)
-    }
-
     firebase
       .auth()
       .signInAnonymously()
       .catch(function(error) {
-        let errorCode = error.code
-        let errorMessage = error.message
+        console.error(error)
       })
 
     firebase.auth().onAuthStateChanged(function(user) {
-      console.warn('onAuthStateChanged', user)
       if (user) {
-        const chatRef = firebase.database().ref('chat')
         const chat = new FirechatUI(
           chatRef,
           document.getElementById('firechat-wrapper')
@@ -87,9 +70,8 @@ export default {
 
         chat.setUser(user.uid, 'Anonym')
         chat._chat.enterRoom('-M31T7pmqvpcroauRsk2')
-      } else {
       }
-    })
+    });
   },
   methods: {}
 }
