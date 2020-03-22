@@ -177,8 +177,8 @@ export default {
     top: -30px;
     height: 200px;
     width: 200px;
-    /* display: block; */
-    display: none;
+    display: block;
+    /* display: none; */
     z-index: 99;
 }
 
