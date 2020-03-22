@@ -2,7 +2,7 @@
     <v-container fluid>
 
     <!-- <div class="radar-container"> -->
-          <div class='radar'>
+          <div class='radar' id="radar">
             <nuxt-link to="/chat" v-for="murmel in allMurmels" :key="murmel.hashtag" >
               <!-- <div id="test-mood-2" class="murmel"> -->
               <!-- <div class="murmel" style="transform: translate3d(-50%, -50%, 0) rotate(360deg) translateX(80%) rotate(-360deg);" -->
