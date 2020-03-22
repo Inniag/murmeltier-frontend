@@ -79,6 +79,8 @@ export default {
                 // value => {
                 // // const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
                 // // return pattern.test(value) || 'Invalid e-mail.'
+                // const pattern = /[A-Za-z0-9\-\.\_]/
+                // return pattern.test(value) || 'Invalid e-mail.'
                 // },
             ],
         }
@@ -97,9 +99,14 @@ export default {
         }
     });
 
+    console.log("data (murmel)")
     console.log(data)
+
     // return { title: data.title }
-    return data
+    return {
+        hashtag: data.hashtag,
+        mood: data.mood_value
+    }
   },
 
   methods: {
@@ -108,8 +115,8 @@ export default {
         console.log("Murmel submitted")
 
         const data = {
-            mood_value: 2,
-            hashtag: "hallomeinhashtag"
+            mood_value: this.mood,
+            hashtag: this.hashtag
         }
         
         const id = await this.$axios.post(`/murmel`, data, {
