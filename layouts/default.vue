@@ -95,6 +95,10 @@
 export default {
   data () {
     return {
+      whisperLocalData: {
+        userId: "",
+        accessKey: "",
+      },
       clipped: false,
       drawer: false,
       fixed: false,
@@ -126,6 +130,66 @@ export default {
       title: 'Murmel'
     }
   },
+
+  
+  async mounted(context) {
+    // this.gameId = this.$route.params.id
+
+    // load persisted data from localstorage to state
+    if (localStorage.getItem('murmelLocalData')) {
+      console.log("we have localstorage data, get it from there")
+      try {
+        this.murmelLocalData = JSON.parse(localStorage.getItem('murmelLocalData'));
+        console.log("murmelLocalData: ")
+        console.log(this.murmelLocalData)
+      } catch(e) {
+        localStorage.removeItem('murmelLocalData');
+      }
+    
+    // no local storage data yet, have to get userId and set localstorage:
+    } else {
+      console.log("no local storage data yet, have to get userId and set localstorage")
+      
+      const userData = await this.$axios.post(`/user`, {}, {
+        // crossdomain: true,
+            headers: { 'Access-Control-Allow-Origin': '*' }
+        });
+
+        console.log("userData")
+        console.log(userData)
+
+        this.murmelLocalData = {
+          userId: userData.data.id,
+          accessKey: userData.data.password
+        }
+
+      // const tempLocalData = this.whisperLocalData
+      // tempLocalData.mostRecentGame = this.gameId
+      // tempLocalData.myGames[this.gameId] = { 
+      //   id: this.gameId, 
+      //   myName: this.userNameField
+      // }
+
+      // this.whisperLocalData = tempLocalData
+
+      // console.log("this.whisperLocalData");
+      // console.log(this.whisperLocalData);
+      
+
+      const parsed = JSON.stringify(this.murmelLocalData);
+      localStorage.setItem('murmelLocalData', parsed);
+    }
+
+    // // if current game id from URL exist in myGames from localstore
+    // if (this.murmelLocalData && 
+    //     this.murmelLocalData.userId) {
+      
+    //   // copy id 
+    //   this.userNameField = this.whisperLocalData.myGames[this.gameId].myName
+    //   this.hasAddedName = true
+    // }
+  },
+
   methods: {
     startGame() {
       startNewGame(this.$router)

@@ -33,6 +33,7 @@
         label="Hashtag"
         placeholder="Beschreibe deine Stimmung/Situation in einem Hashtag!"
         v-model="hashtag"
+        :clearable="true"
     ></v-text-field>
 <!-- 
     <div class="text-center">
