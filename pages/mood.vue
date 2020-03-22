@@ -70,7 +70,7 @@ export default {
     // http://ec2-18-184-6-227.eu-central-1.compute.amazonaws.com:5000/user
 
     components: {
-    },  
+    },
     data () {
         return {
             slides: [
@@ -97,11 +97,11 @@ export default {
   },
 
   async asyncData ({ $axios }) {
-    
+
     // seems we must get this from localstore as "this" is not supported here
     // TODO: improve this
        try {
-            
+
             const user = await getUserOrRequestFromServer()
 
             const myAuth =  {
@@ -129,10 +129,8 @@ export default {
       } catch(e) {
           return {}
       }
-    
+
   },
-
-
 
   methods: {
     async submitMurmel() {
@@ -148,7 +146,7 @@ export default {
 
         console.log("user")
         console.log(user)
-        
+
         const id = await this.$axios.post(`/murmel`, data, {
         // crossdomain: true,
             headers: { 'Access-Control-Allow-Origin': '*' },
@@ -162,7 +160,7 @@ export default {
 
         console.log("id")
         console.log(id)
-        
+
     }
   }
 
