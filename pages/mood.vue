@@ -67,6 +67,12 @@
 import getUserOrRequestFromServer from "~/imports/getUserOrRequestFromServer"
 
 export default {
+    head() {
+        return {
+            title: "Murmel"
+        };
+    },
+
     // http://ec2-18-184-6-227.eu-central-1.compute.amazonaws.com:5000/user
 
     components: {

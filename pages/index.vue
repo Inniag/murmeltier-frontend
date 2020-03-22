@@ -61,6 +61,12 @@ import getUserOrRequestFromServer from "~/imports/getUserOrRequestFromServer"
 
 
 export default {
+  head() {
+      return {
+        title: "Murmel"
+    };
+  },
+
   components: {
 
   },

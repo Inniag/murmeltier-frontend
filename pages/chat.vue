@@ -51,6 +51,12 @@
 import firebase from 'firebase'
 
 export default {
+  head() {
+      return {
+        title: "Murmel"
+    };
+  },
+
   components: {},
   data() {
     return {}

@@ -102,6 +102,12 @@
 <script>
 
 export default {
+  head() {
+      return {
+        title: ""
+    };
+  },
+
   data () {
     return {
 
