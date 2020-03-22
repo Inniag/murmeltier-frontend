@@ -8,7 +8,7 @@
       app
     >
       <v-list>
-        
+
 
         <v-list-item
           v-for="(item, i) in items"
@@ -42,7 +42,7 @@
       :clipped-left="clipped"
       fixed
       app
-      light 
+      light
       color="primary"
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
@@ -55,7 +55,7 @@
         <nuxt />
       </v-container>
     </v-content>
-    
+
   <v-bottom-navigation
     fixed
     grow

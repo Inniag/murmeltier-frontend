@@ -48,7 +48,7 @@
               <v-img  max-height="50px" max-width="50px" :src="require('../assets/mood-1.svg')" />
             </div>
           </nuxt-link> -->
-            
+
             <!-- <div class='sweep'></div> -->
           </div>
     <!-- </div> -->
@@ -114,14 +114,14 @@ export default {
             });
 
             return allMurmels
-    
+
   }
 }
 </script>
 
 <style scoped lang="scss">
  $green: rgb(175, 205, 134);
- 
+
 $black: #000000;
 $gray:  #eee;
 
