@@ -27,12 +27,37 @@
 </template>
 
 <script>
-// import Logo from '~/components/Logo.vue'
-// import VuetifyLogo from '~/components/VuetifyLogo.vue'
+import getUserOrRequestFromServer from "~/imports/getUserOrRequestFromServer"
+
 
 export default {
   components: {
 
+  },
+  async asyncData ({ $axios }) {
+    
+    // seems we must get this from localstore as "this" is not supported here
+    // TODO: improve this
+       
+            const user = await getUserOrRequestFromServer()
+
+            const myAuth =  {
+                "username": user.userId,
+                "password": user.accessKey
+            }
+
+            const data  = await $axios.get(`/murmel/radar`, {
+                // crossdomain: true,
+                headers: { 'Access-Control-Allow-Origin': '*' },
+                auth: myAuth
+            });
+
+            console.log("data (murmel)")
+            console.log(JSON.stringify(data.data))
+
+            // return { title: data.title }
+            return data
+    
   }
 }
 </script>
