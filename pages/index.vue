@@ -5,31 +5,31 @@
           <div class='radar'>
             <nuxt-link to="/chat">
               <div id="test-mood-2" class="murmel">
-                <v-img  max-height="70px" max-width="70px" :src="require('../assets/mood-4.svg')" />
+                <v-img  max-height="50px" max-width="50px" :src="require('../assets/mood-4.svg')" />
               </div>
             </nuxt-link>
 
           <nuxt-link to="/chat">
             <div id="test-mood-3" class="murmel">
-              <v-img  max-height="70px" max-width="70px" :src="require('../assets/mood-2.svg')" />
+              <v-img  max-height="50px" max-width="50px" :src="require('../assets/mood-2.svg')" />
             </div>
           </nuxt-link>
 
           <nuxt-link to="/chat">
             <div id="test-mood-4" class="murmel">
-              <v-img  max-height="70px" max-width="70px" :src="require('../assets/mood-3.svg')" />
+              <v-img  max-height="50px" max-width="50px" :src="require('../assets/mood-3.svg')" />
             </div>
           </nuxt-link>
 
           <nuxt-link to="/chat">
             <div id="test-mood-5" class="murmel">
-              <v-img  max-height="70px" max-width="70px" :src="require('../assets/mood-5.svg')" />
+              <v-img  max-height="50px" max-width="50px" :src="require('../assets/mood-5.svg')" />
             </div>
           </nuxt-link>
 
           <nuxt-link to="/chat">
             <div id="test-mood-6" class="murmel">
-              <v-img  max-height="70px" max-width="70px" :src="require('../assets/mood-1.svg')" />
+              <v-img  max-height="50px" max-width="50px" :src="require('../assets/mood-1.svg')" />
             </div>
           </nuxt-link>
             

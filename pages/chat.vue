@@ -7,6 +7,12 @@
 
     <v-col class="text-center" cols="12" sm="4">
       <div class="my-2">
+        <v-btn width="130px" light color="primary" outlined>Senden</v-btn>
+      </div>
+    </v-col>
+
+    <v-col class="text-center" cols="12" sm="4">
+      <div class="my-2">
         <v-btn width="130px" light color="primary" outlined>Chat beenden</v-btn>
       </div>
     </v-col>
