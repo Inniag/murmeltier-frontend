@@ -55,6 +55,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 
 export default {
     // http://ec2-18-184-6-227.eu-central-1.compute.amazonaws.com:5000/user
@@ -91,8 +92,8 @@ export default {
         // crossdomain: true,
         headers: { 'Access-Control-Allow-Origin': '*' },
         auth: {
-            "id": "c07881f8-fb4f-4ca3-975a-34e7c993fb7b",
-            "password": "cce31512-3d62-44d9-b83c-dbb971c8bb6c"
+            "id": "bc15b072-244b-4258-8c05-e612f7f720ab",
+            "password": "e3be321d-984d-49a6-9b3e-3163e9f09be0"
         }
     });
 
@@ -112,12 +113,35 @@ export default {
     // return { title: data.title }
     return data
   },
+
   methods: {
   // https://medium.com/@pascalluther/nuxt-js-v2-firestore-ssr-938d8fb7d2b0
-    submitMurmel() {
-        alert("Submitted!")
+    async submitMurmel({ $axios }) {
+        // alert("Submitted!")
+        console.log("Murmel submitted")
+
+        const data = {
+            mood_value: 2,
+            hashtag: "hallomeinhashtag"
+        }
+        
+        // const id = await axios.post(`/murmel`, data, {
+        const id = await axios.post(`http://ec2-18-184-6-227.eu-central-1.compute.amazonaws.com:8080/murmel`, data, {
+        // crossdomain: true,
+            headers: { 'Access-Control-Allow-Origin': '*' },
+            auth: {
+                "username": "bc15b072-244b-4258-8c05-e612f7f720ab",
+                "password": "e3be321d-984d-49a6-9b3e-3163e9f09be0"
+            }
+        });
+
+        console.log("id")
+        console.log(id)
+        
     }
   }
+
+
 }
 </script>
 
