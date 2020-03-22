@@ -16,8 +16,14 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
+    script: [
+      { src: "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js" },
+      { src: "https://www.gstatic.com/firebasejs/3.3.0/firebase.js" },
+      { src: "http://ec2-18-184-6-227.eu-central-1.compute.amazonaws.com/firechat/firechat.js" },
+    ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'http://ec2-18-184-6-227.eu-central-1.compute.amazonaws.com/firechat/firechat.css' }
     ]
   },
   /*
