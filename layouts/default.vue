@@ -42,6 +42,8 @@
       :clipped-left="clipped"
       fixed
       app
+      light 
+      color="primary"
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-toolbar-title v-text="title" />
@@ -57,7 +59,8 @@
   <v-bottom-navigation
     fixed
     grow
-    color="green"
+    backgroundColor="primary"
+    light
   >
     <v-btn
       to="/mood"
