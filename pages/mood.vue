@@ -150,9 +150,6 @@ export default {
 
         const user = await getUserOrRequestFromServer()
 
-        console.log("user")
-        console.log(user)
-
         const id = await this.$axios.post(`/murmel`, data, {
         // crossdomain: true,
             headers: { 'Access-Control-Allow-Origin': '*' },

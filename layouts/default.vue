@@ -137,9 +137,6 @@ export default {
 
 
   methods: {
-    startGame() {
-      startNewGame(this.$router)
-    }
-  }
+  },
 }
 </script>
