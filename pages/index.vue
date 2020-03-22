@@ -1,11 +1,11 @@
 <template>
     <v-container fluid>
 
-    <div class="radar-container">
+    <!-- <div class="radar-container"> -->
           <div class='radar'>
             <!-- <div class='sweep'></div> -->
           </div>
-    </div>
+    <!-- </div> -->
       
    </v-container>
 </template>
@@ -54,10 +54,10 @@ body {
     font-size: 1.6rem;
 }
 
-.radar-container {
-  height: 50%;
-  max-height: 200px;
-}
+// .radar-container {
+//   height: 50%;
+//   max-height: 200px;
+// }
 
 .radar {
     background:
@@ -71,15 +71,15 @@ body {
     //     repeating-radial-gradient(rgba($green, 0) 5.8%, rgba($green, 0) 18%, rgba($green, 1) 18.6%, rgba($green, 0) 18.9%), // concentric circles
     //     linear-gradient(90deg, rgba($green, 0) 49.5%, rgba($green, 1) 50%, rgba($green, 1) 50%, rgba($green, 0) 50.2%), // center line - vertical
     //     linear-gradient(0deg, rgba($green, 0) 49.5%, rgba($green, 1) 50%, rgba($green, 1) 50%, rgba($green, 0) 50.2%); // center line - horizontal
-    width: 60vw;
-    height: 60vw;
-    max-height: 75vh;
-    max-width: 75vh;
+    width: 90vw;
+    height: 90vw;
+    max-height: 100%;
+    max-width: 100%;
     position: relative;
-    left: 50%;
-    top: 50%;
-    margin-top: 33%;
-    transform: translate(-50%, -50%);
+    // left: 50%;
+    // top: 50%;
+    // margin-top: 33%;
+    // transform: translate(-50%, -50%);
     border-radius: 50%;
     border: 0.2rem solid $green;
     overflow: hidden;
