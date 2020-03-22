@@ -3,19 +3,19 @@
 
     <!-- <div class="radar-container"> -->
           <div class='radar'>
-            <div id="test-mood-2">
+            <div id="test-mood-2" class="murmel">
               <v-img  max-height="70px" max-width="70px" :src="require('../assets/mood-4.svg')" />
             </div>
-            <div id="test-mood-3">
+            <div id="test-mood-3" class="murmel">
               <v-img  max-height="70px" max-width="70px" :src="require('../assets/mood-2.svg')" />
             </div>
-            <div id="test-mood-4">
+            <div id="test-mood-4" class="murmel">
               <v-img  max-height="70px" max-width="70px" :src="require('../assets/mood-3.svg')" />
             </div>
-            <div id="test-mood-5">
+            <div id="test-mood-5" class="murmel">
               <v-img  max-height="70px" max-width="70px" :src="require('../assets/mood-5.svg')" />
             </div>
-            <div id="test-mood-6">
+            <div id="test-mood-6" class="murmel">
               <v-img  max-height="70px" max-width="70px" :src="require('../assets/mood-1.svg')" />
             </div>
             
@@ -79,80 +79,42 @@ body {
 .radar {
 
 // TODO: https://alligator.io/vuejs/dynamic-styles/
-    #test-mood-2 {
-    // transform: container: put it in the middle of the radar, rotate, move outside (percent of full radius), rotate back (all aligned)
-    transform: translate3d(-50%, -50%, 0) rotate(360deg) translateX(80%) rotate(-360deg);
-    transform-origin: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 50%;
-    height: 100px;
-    display: flex;
-    flex: 1 0 auto;
-    place-content: center;
-    align-items: center;
+    .murmel {
+      transform-origin: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 50%;
+      height: 100px;
+      display: flex;
+      flex: 1 0 auto;
+      place-content: center;
+      align-items: center;
 
+    }
+
+    #test-mood-2 {
+      // transform: container: put it in the middle of the radar, rotate, move outside (percent of full radius), rotate back (all aligned)
+      transform: translate3d(-50%, -50%, 0) rotate(360deg) translateX(80%) rotate(-360deg);
     }
     #test-mood-4 {
-    // transform: container: put it in the middle of the radar, rotate, move outside (percent of full radius), rotate back (all aligned)
-    transform: translate3d(-50%, -50%, 0) rotate(270deg) translateX(20%) rotate(-270deg);
-    transform-origin: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 50%;
-    height: 100px;
-    display: flex;
-    flex: 1 0 auto;
-    place-content: center;
-    align-items: center;
-
+      // transform: container: put it in the middle of the radar, rotate, move outside (percent of full radius), rotate back (all aligned)
+      transform: translate3d(-50%, -50%, 0) rotate(270deg) translateX(20%) rotate(-270deg);
     }
+
     #test-mood-5 {
-    // transform: container: put it in the middle of the radar, rotate, move outside (percent of full radius), rotate back (all aligned)
-    transform: translate3d(-50%, -50%, 0) rotate(90deg) translateX(40%) rotate(-90deg);
-    transform-origin: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 50%;
-    height: 100px;
-    display: flex;
-    flex: 1 0 auto;
-    place-content: center;
-    align-items: center;
-
+      // transform: container: put it in the middle of the radar, rotate, move outside (percent of full radius), rotate back (all aligned)
+      transform: translate3d(-50%, -50%, 0) rotate(90deg) translateX(40%) rotate(-90deg);
     }
+
     #test-mood-3 {
-    // transform: container: put it in the middle of the radar, rotate, move outside (percent of full radius), rotate back (all aligned)
-    transform: translate3d(-50%, -50%, 0) rotate(180deg) translateX(70%) rotate(-180deg);
-    transform-origin: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 50%;
-    height: 100px;
-    display: flex;
-    flex: 1 0 auto;
-    place-content: center;
-    align-items: center;
-
+      // transform: container: put it in the middle of the radar, rotate, move outside (percent of full radius), rotate back (all aligned)
+      transform: translate3d(-50%, -50%, 0) rotate(180deg) translateX(70%) rotate(-180deg);
     }
-    #test-mood-6 {
-    // transform: container: put it in the middle of the radar, rotate, move outside (percent of full radius), rotate back (all aligned)
-    transform: translate3d(-50%, -50%, 0) rotate(320deg) translateX(85%) rotate(-320deg);
-    transform-origin: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 50%;
-    height: 100px;
-    display: flex;
-    flex: 1 0 auto;
-    place-content: center;
-    align-items: center;
 
+    #test-mood-6 {
+      // transform: container: put it in the middle of the radar, rotate, move outside (percent of full radius), rotate back (all aligned)
+      transform: translate3d(-50%, -50%, 0) rotate(320deg) translateX(85%) rotate(-320deg);
     }
 
     
