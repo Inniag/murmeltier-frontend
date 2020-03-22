@@ -163,31 +163,10 @@ export default {
           accessKey: userData.data.password
         }
 
-      // const tempLocalData = this.whisperLocalData
-      // tempLocalData.mostRecentGame = this.gameId
-      // tempLocalData.myGames[this.gameId] = { 
-      //   id: this.gameId, 
-      //   myName: this.userNameField
-      // }
-
-      // this.whisperLocalData = tempLocalData
-
-      // console.log("this.whisperLocalData");
-      // console.log(this.whisperLocalData);
-      
-
       const parsed = JSON.stringify(this.murmelLocalData);
       localStorage.setItem('murmelLocalData', parsed);
     }
 
-    // // if current game id from URL exist in myGames from localstore
-    // if (this.murmelLocalData && 
-    //     this.murmelLocalData.userId) {
-      
-    //   // copy id 
-    //   this.userNameField = this.whisperLocalData.myGames[this.gameId].myName
-    //   this.hasAddedName = true
-    // }
   },
 
   methods: {

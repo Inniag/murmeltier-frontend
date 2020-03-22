@@ -72,6 +72,7 @@ export default {
                 'Fourth',
                 'Fifth',
             ],
+            murmelLocalData: {},
             hashtag: "",
             mood: 2,
             rules: [
@@ -88,26 +89,59 @@ export default {
   },
 
   async asyncData ({ $axios }) {
-//   async asyncData ({ params }) {
-    // const { data } = await axios.get(`/${params.id}`)
-    // const { data } = await axios.get(`/user`)
-    const { data } = await $axios.get(`/murmel/me/current`, {
-        // crossdomain: true,
-        headers: { 'Access-Control-Allow-Origin': '*' },
-        auth: {
-            "username": "bc15b072-244b-4258-8c05-e612f7f720ab",
-            "password": "e3be321d-984d-49a6-9b3e-3163e9f09be0"
-        }
-    });
+    
+    // seems we must get this from localstore as "this" is not supported here
+    // TODO: improve this
+       try {
+            const murmelLocalData = JSON.parse(localStorage.getItem('murmelLocalData'));
+            const myAuth =  {
+                "username": murmelLocalData.userId,
+                "password": murmelLocalData.accessKey
+                // "username": "bc15b072-244b-4258-8c05-e612f7f720ab",
+                // "password": "e3be321d-984d-49a6-9b3e-3163e9f09be0"
+            }
 
-    console.log("data (murmel)")
-    console.log(data)
+            const { data } = await $axios.get(`/murmel/me/current`, {
+                // crossdomain: true,
+                headers: { 'Access-Control-Allow-Origin': '*' },
+                auth: myAuth
+            });
 
-    // return { title: data.title }
-    return {
-        hashtag: data.hashtag,
-        mood: data.mood_value
+            console.log("data (murmel)")
+            console.log(data)
+
+            // return { title: data.title }
+            return {
+                hashtag: data.hashtag,
+                mood: data.mood_value
+            }
+
+      } catch(e) {
+          return {}
+      }
+    
+  },
+
+    async mounted(context) {
+    // this.gameId = this.$route.params.id
+
+    // load persisted data from localstorage to state
+    if (localStorage.getItem('murmelLocalData')) {
+      console.log("we have localstorage data, get it from there")
+
+      try {
+        this.murmelLocalData = JSON.parse(localStorage.getItem('murmelLocalData'));
+        console.log("murmelLocalData: ")
+        console.log(this.murmelLocalData)
+      } catch(e) {
+        localStorage.removeItem('murmelLocalData');
+      }
+    
+    // no local storage data yet, have to get userId and set localstorage:
+    } else {
+      console.log("no local storage data yet (mood), have to get userId and set localstorage")
     }
+
   },
 
   methods: {
@@ -124,8 +158,10 @@ export default {
         // crossdomain: true,
             headers: { 'Access-Control-Allow-Origin': '*' },
             auth: {
-                "username": "bc15b072-244b-4258-8c05-e612f7f720ab",
-                "password": "e3be321d-984d-49a6-9b3e-3163e9f09be0"
+                "username": this.murmelLocalData.userId,
+                "password": this.murmelLocalData.accessKey
+                // "username": "bc15b072-244b-4258-8c05-e612f7f720ab",
+                // "password": "e3be321d-984d-49a6-9b3e-3163e9f09be0"
             }
         });
 
