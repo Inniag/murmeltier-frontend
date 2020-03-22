@@ -3,6 +3,10 @@
 
     <!-- <div class="radar-container"> -->
           <div class='radar'>
+            <div id="test-mood-2">
+              <v-img  max-height="100px" max-width="100px" :src="require('../assets/mood-4.svg')" />
+            </div>
+            
             <!-- <div class='sweep'></div> -->
           </div>
     <!-- </div> -->
@@ -22,7 +26,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
- $green: #20ff4d;
+ $green: #2c0a5c;
 $black: #000000;
 $gray:  #eee;
 
@@ -59,7 +63,32 @@ body {
 //   max-height: 200px;
 // }
 
+
 .radar {
+
+// TODO: https://alligator.io/vuejs/dynamic-styles/
+    #test-mood-2 {
+    // transform: container: put it in the middle of the radar, rotate, move outside (percent of full radius), rotate back (all aligned)
+    transform: translate3d(-50%, -50%, 0) rotate(90deg) translateX(100%) rotate(-90deg);
+    transform-origin: center;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 100px;
+    display: flex;
+    flex: 1 0 auto;
+    place-content: center;
+    align-items: center;
+
+    //   transform: rotate(45deg) translate3d(-50%, -50%, 0);
+    // transform-origin: center;
+    // position: relative;
+    // top: 50%;
+    // left: 50%;
+    }
+    
+
     background:
         -webkit-radial-gradient(center, rgba($green, 0.3) 0%, rgba($green, 0) 75%), // background glow
         -webkit-repeating-radial-gradient(rgba($green, 0) 5.8%, rgba($green, 0) 18%, rgba($green, 1) 18.6%, rgba($green, 0) 18.9%), // concentric circles
@@ -99,7 +128,8 @@ body {
     &:after {
         content: ' ';
         display: block;
-        background-image: linear-gradient( 44deg, rgba(0, 255, 51, 0) 50%, rgba(0, 255, 51, 1) 100%);
+        // background-image: linear-gradient( 44deg, rgba(0, 255, 51, 0) 50%, rgba(0, 255, 51, 1) 100%);
+        background-image: linear-gradient( 44deg, rgba(0, 255, 51, 0) 50%, rgb(125, 70, 172) 100%);
         width: 50%;
         height: 50%;
         position: absolute;
@@ -121,35 +151,36 @@ body {
   }
 }
 
-// @keyframes blips {
-//     14% {
-//         background:
-//             radial-gradient(2vmin circle at 75% 70%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%);
-//     }
-//     14.0002% {
-//         background:
-//             radial-gradient(2vmin circle at 75% 70%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%),
-//             radial-gradient(2vmin circle at 63% 72%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%);
-//     }
-//     25% {
-//         background:
-//             radial-gradient(2vmin circle at 75% 70%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%),
-//             radial-gradient(2vmin circle at 63% 72%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%),
-//             radial-gradient(2vmin circle at 56% 86%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%);
-//     }
-//     26% {
-//         background:
-//             radial-gradient(2vmin circle at 75% 70%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%),
-//             radial-gradient(2vmin circle at 63% 72%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%),
-//             radial-gradient(2vmin circle at 56% 86%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%);
-//         opacity: 1;
-//     }
-//     100% {
-//         background:
-//             radial-gradient(2vmin circle at 75% 70%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%),
-//             radial-gradient(2vmin circle at 63% 72%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%),
-//             radial-gradient(2vmin circle at 56% 86%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%);
-//         opacity: 0;
-//     }
-// }
+@keyframes blips {
+    14% {
+        background:
+            radial-gradient(2vmin circle at 75% 70%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%);
+    }
+    14.0002% {
+        background:
+            radial-gradient(2vmin circle at 75% 70%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%),
+            radial-gradient(2vmin circle at 0% 50%, rgba(#fff, 1) 10%, rgba(255,0,0, 1) 30%, rgba(#fff, 0) 100%),
+            radial-gradient(2vmin circle at 63% 72%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%);
+    }
+    25% {
+        background:
+            radial-gradient(2vmin circle at 75% 70%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%),
+            radial-gradient(2vmin circle at 63% 72%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%),
+            radial-gradient(2vmin circle at 56% 86%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%);
+    }
+    26% {
+        background:
+            radial-gradient(2vmin circle at 75% 70%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%),
+            radial-gradient(2vmin circle at 63% 72%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%),
+            radial-gradient(2vmin circle at 56% 86%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%);
+        opacity: 1;
+    }
+    100% {
+        background:
+            radial-gradient(2vmin circle at 75% 70%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%),
+            radial-gradient(2vmin circle at 63% 72%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%),
+            radial-gradient(2vmin circle at 56% 86%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%);
+        opacity: 0;
+    }
+}
 </style>
