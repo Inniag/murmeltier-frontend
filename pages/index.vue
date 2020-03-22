@@ -2,7 +2,7 @@
     <v-container fluid>
 
     <!-- <div class="radar-container"> -->
-          <div class='radar'>
+          <div class='radar' id="radar">
             <nuxt-link to="/chat">
               <div id="test-mood-2" class="murmel">
                 <v-img  max-height="50px" max-width="50px" :src="require('../assets/mood-4.svg')" />
@@ -116,6 +116,10 @@ body {
 // }
 
 
+#radar {
+  margin: auto;
+}
+
 .radar {
 
 // TODO: https://alligator.io/vuejs/dynamic-styles/
@@ -172,8 +176,9 @@ body {
     //     linear-gradient(0deg, rgba($green, 0) 49.5%, rgba($green, 1) 50%, rgba($green, 1) 50%, rgba($green, 0) 50.2%); // center line - horizontal
     width: 90vw;
     height: 90vw;
-    max-height: 100%;
-    max-width: 100%;
+    max-height: 400px;
+    max-width: 400px;
+    margin: 0;
     position: relative;
     // left: 50%;
     // top: 50%;
