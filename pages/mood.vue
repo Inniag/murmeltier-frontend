@@ -94,10 +94,12 @@ export default {
     // seems we must get this from localstore as "this" is not supported here
     // TODO: improve this
        try {
-            const murmelLocalData = JSON.parse(localStorage.getItem('murmelLocalData'));
+            
+            const user = await getUserOrRequestFromServer()
+
             const myAuth =  {
-                "username": murmelLocalData.userId,
-                "password": murmelLocalData.accessKey
+                "username": user.userId,
+                "password": user.accessKey
                 // "username": "bc15b072-244b-4258-8c05-e612f7f720ab",
                 // "password": "e3be321d-984d-49a6-9b3e-3163e9f09be0"
             }
