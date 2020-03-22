@@ -175,6 +175,7 @@ export default {
     height: 200px;
     width: 200px;
     /* display: block; */
+    display: none;
     z-index: 99;
 }
 </style>
