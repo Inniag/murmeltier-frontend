@@ -79,6 +79,15 @@
       <span>Sonar</span>
       <v-icon>mdi-radar</v-icon>
     </v-btn>
+
+    <v-btn
+      to="/chat"
+      router
+      exact
+    >
+      <span>Chat</span>
+      <v-icon>mdi-radar</v-icon>
+    </v-btn>
   </v-bottom-navigation>
 
     <!-- <v-footer
