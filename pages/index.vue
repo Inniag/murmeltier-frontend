@@ -9,11 +9,16 @@
               <div class="murmel" style=";"
               :style="{ transform: 'translate3d(-50%, -50%, 0) rotate('+ (Math.random() * 360) +'deg) translateX('+ (Math.random() * (90 - 15) + 15) +'%) rotate(-'+ (Math.random() * 360) +'deg)'}"
               >
-                <v-img  max-height="50px" max-width="50px" :src="require('../assets/mood-'+murmel.mood_value+'.svg')" />
+                <v-tooltip bottom>
+                  <template v-slot:activator="{ on }">
+                    <v-img  max-height="50px" max-width="50px" :src="require('../assets/mood-'+murmel.mood_value+'.svg')" v-on="on" />
+                  </template>
+                  <span>{{ murmel.hashtag }}</span>
+                </v-tooltip>
               </div>
             </nuxt-link>
 
-<!-- 
+<!--
             <nuxt-link to="/chat" >
               <div id="test-mood-2" class="murmel">
                 <v-img  max-height="50px" max-width="50px" :src="require('../assets/mood-4.svg')" />
