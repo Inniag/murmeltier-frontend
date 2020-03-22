@@ -101,6 +101,12 @@ export default {
 
             const allMurmels = {allMurmels: data.data}
             // return { title: data.title }
+            allMurmels.allMurmels.map((m) => {
+              if (!m.hashtag.startsWith("#")) {
+                m.hashtag = `#${m.hashtag}`
+                }
+            });
+
             return allMurmels
     
   }
