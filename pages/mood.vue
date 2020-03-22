@@ -42,14 +42,14 @@
         v-model="hashtag"
         :clearable="true"
     ></v-text-field>
-<!-- 
+<!--
     <div class="text-center">
         <v-btn width="60%" outlined color="indigo" dark>Abbrechen</v-btn>
 
         <v-btn width="60%"  color="success">Teilen</v-btn>
     </div> -->
 
-    <v-col class="text-center" cols="12" sm="4">
+    <v-col class="text-center" cols="12" sm="4" id="buttons">
 
         <div class="my-2">
             <v-btn  width="130px" light color="primary" outlined>Abbrechen</v-btn>
@@ -218,7 +218,9 @@ export default {
   top: 6px;
 }
 
-
+#buttons {
+  margin: auto;
+}
 
 </style>
 
