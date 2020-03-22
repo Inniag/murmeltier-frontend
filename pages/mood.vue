@@ -3,7 +3,10 @@
 
     <!-- <img id="murmel-bubble" max-height="200px" max-width="200px" :src="require('../assets/mood-1.svg')" /> -->
 
-        <img id="murmel-bubble" src="~/assets/Murmel_Sprechblase.svg" />
+        <div class="box sb2">Wie geht's dir?</div>
+
+
+        <img id="murmel-bubble" src="~/assets/murmel_portrait.svg" />
 
     <v-carousel
         :cycle="false"
@@ -177,5 +180,44 @@ export default {
     /* display: block; */
     z-index: 99;
 }
+
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.box {
+  width: 300px;
+  left: 120px;
+  top: 40px;
+  margin: 50px auto;
+  background: #00bfb6;
+  padding: 20px;
+  text-align: center;
+  font-weight: 900;
+  color: #fff;
+  font-family: arial;
+  position: fixed;
+  z-index: 200;
+}
+
+
+
+.sb2:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid #00bfb6;
+  border-top: 10px solid #00bfb6;
+  border-bottom: 10px solid transparent;
+  left: -19px;
+  top: 6px;
+}
+
+
+
 </style>
 
