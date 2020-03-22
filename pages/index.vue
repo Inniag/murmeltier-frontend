@@ -3,21 +3,35 @@
 
     <!-- <div class="radar-container"> -->
           <div class='radar'>
-            <div id="test-mood-2" class="murmel">
-              <v-img  max-height="70px" max-width="70px" :src="require('../assets/mood-4.svg')" />
-            </div>
+            <nuxt-link to="/chat">
+              <div id="test-mood-2" class="murmel">
+                <v-img  max-height="70px" max-width="70px" :src="require('../assets/mood-4.svg')" />
+              </div>
+            </nuxt-link>
+
+          <nuxt-link to="/chat">
             <div id="test-mood-3" class="murmel">
               <v-img  max-height="70px" max-width="70px" :src="require('../assets/mood-2.svg')" />
             </div>
+          </nuxt-link>
+
+          <nuxt-link to="/chat">
             <div id="test-mood-4" class="murmel">
               <v-img  max-height="70px" max-width="70px" :src="require('../assets/mood-3.svg')" />
             </div>
+          </nuxt-link>
+
+          <nuxt-link to="/chat">
             <div id="test-mood-5" class="murmel">
               <v-img  max-height="70px" max-width="70px" :src="require('../assets/mood-5.svg')" />
             </div>
+          </nuxt-link>
+
+          <nuxt-link to="/chat">
             <div id="test-mood-6" class="murmel">
               <v-img  max-height="70px" max-width="70px" :src="require('../assets/mood-1.svg')" />
             </div>
+          </nuxt-link>
             
             <!-- <div class='sweep'></div> -->
           </div>
