@@ -1,7 +1,5 @@
 <template>
   <v-container fluid>
-    <span>Vorschau: Momentan nur globaler Chat (keine private Unterhaltung)!</span>
-
     <!-- TODO: Show current Murmel -->
 
     <span id="placeholder">Keine Reaktionen auf dein Murmel</span>
@@ -15,6 +13,8 @@
       <div class="my-2">
         <v-btn width="130px" light color="primary">Senden</v-btn>
       </div>
+
+      <h3 style="color: red;">Vorschau: Momentan nur globaler Chat (keine private Unterhaltung)!</h3>
     </v-col>
 
   </v-container>
