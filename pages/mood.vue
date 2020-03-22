@@ -42,19 +42,13 @@
     </div> -->
 
     <v-col class="text-center" cols="12" sm="4">
-      <!-- <div class="my-2">
-        <v-btn depressed small>Normal</v-btn>
-      </div>
-      <div class="my-2">
-        <v-btn depressed small color="primary">Primary</v-btn>
-      </div> -->
-        <!-- <v-btn class="ma-2" outlined color="indigo" dark>Abbrechen</v-btn> -->
+
         <div class="my-2">
-            <v-btn  width="130px" outlined color="indigo" dark>Abbrechen</v-btn>
+            <v-btn  width="130px" light color="primary" outlined>Abbrechen</v-btn>
         </div>
-        <!-- <v-btn class="ma-2" color="success">Teilen</v-btn> -->
+
         <div class="my-2">
-            <v-btn width="130px" color="success">Eintragen</v-btn>
+            <v-btn width="130px" color="primary" @click="submitMurmel">Eintragen</v-btn>
         </div>
     </v-col>
    </v-container>
@@ -117,6 +111,12 @@ export default {
     console.log(data)
     // return { title: data.title }
     return data
+  },
+  methods: {
+  // https://medium.com/@pascalluther/nuxt-js-v2-firestore-ssr-938d8fb7d2b0
+    submitMurmel() {
+        alert("Submitted!")
+    }
   }
 }
 </script>
