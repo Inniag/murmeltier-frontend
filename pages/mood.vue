@@ -1,6 +1,10 @@
 <template>
     <v-container fluid>
 
+    <!-- <img id="murmel-bubble" max-height="200px" max-width="200px" :src="require('../assets/mood-1.svg')" /> -->
+
+        <img id="murmel-bubble" src="~/assets/Murmel_Sprechblase.svg" />
+
     <v-carousel
         :cycle="false"
         :continuous="false"
@@ -162,4 +166,16 @@ export default {
 
 }
 </script>
+
+<style scoped>
+#murmel-bubble {
+    position: absolute;
+    left: 0;
+    top: -30px;
+    height: 200px;
+    width: 200px;
+    /* display: block; */
+    z-index: 99;
+}
+</style>
 

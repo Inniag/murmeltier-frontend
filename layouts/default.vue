@@ -86,7 +86,7 @@
       exact
     >
       <span>Chat</span>
-      <v-icon>mdi-radar</v-icon>
+      <v-icon>mdi-chat-outline</v-icon>
     </v-btn>
   </v-bottom-navigation>
 
