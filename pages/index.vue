@@ -3,7 +3,18 @@
 
     <!-- <div class="radar-container"> -->
           <div class='radar'>
-            <nuxt-link to="/chat">
+            <nuxt-link to="/chat" v-for="murmel in allMurmels" :key="murmel.hashtag" >
+              <!-- <div id="test-mood-2" class="murmel"> -->
+              <!-- <div class="murmel" style="transform: translate3d(-50%, -50%, 0) rotate(360deg) translateX(80%) rotate(-360deg);" -->
+              <div class="murmel" style=";"
+              :style="{ transform: 'translate3d(-50%, -50%, 0) rotate('+ (Math.random() * 360) +'deg) translateX('+ (Math.random() * (90 - 15) + 15) +'%) rotate(-'+ (Math.random() * 360) +'deg)'}"
+              >
+                <v-img  max-height="50px" max-width="50px" :src="require('../assets/mood-'+murmel.mood_value+'.svg')" />
+              </div>
+            </nuxt-link>
+
+<!-- 
+            <nuxt-link to="/chat" >
               <div id="test-mood-2" class="murmel">
                 <v-img  max-height="50px" max-width="50px" :src="require('../assets/mood-4.svg')" />
               </div>
@@ -31,7 +42,7 @@
             <div id="test-mood-6" class="murmel">
               <v-img  max-height="50px" max-width="50px" :src="require('../assets/mood-1.svg')" />
             </div>
-          </nuxt-link>
+          </nuxt-link> -->
             
             <!-- <div class='sweep'></div> -->
           </div>
@@ -47,6 +58,20 @@ import getUserOrRequestFromServer from "~/imports/getUserOrRequestFromServer"
 export default {
   components: {
 
+  },
+  data () {
+    return {
+      allMurmels: []
+    }
+  },
+  methods: {
+    randomPercent: function () {
+      const max = 90
+      const min = 15
+
+      Math.random() * (max - min) + min;
+      Math.random() * (90 - 15) + 15;
+    }
   },
   async asyncData ({ $axios }) {
     
@@ -69,8 +94,9 @@ export default {
             console.log("data (murmel)")
             console.log(JSON.stringify(data.data))
 
+            const allMurmels = {allMurmels: data.data}
             // return { title: data.title }
-            return data
+            return allMurmels
     
   }
 }
