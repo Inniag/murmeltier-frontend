@@ -54,6 +54,11 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    // http://ec2-18-184-6-227.eu-central-1.compute.amazonaws.com:5000/user
+    baseURL: "http://ec2-18-184-6-227.eu-central-1.compute.amazonaws.com:8080",
+    proxyHeaders: false,
+    credentials: false
+    // proxy: true
   },
   /*
   ** vuetify module configuration

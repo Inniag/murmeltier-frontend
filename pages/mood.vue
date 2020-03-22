@@ -63,6 +63,8 @@
 <script>
 
 export default {
+    // http://ec2-18-184-6-227.eu-central-1.compute.amazonaws.com:5000/user
+
     components: {
     },  
     data () {
@@ -85,6 +87,36 @@ export default {
                 // },
             ],
         }
+  },
+
+  async asyncData ({ $axios }) {
+//   async asyncData ({ params }) {
+    // const { data } = await axios.get(`/${params.id}`)
+    // const { data } = await axios.get(`/user`)
+    const { data } = await $axios.get(`/murmel/me/current`, {
+        // crossdomain: true,
+        headers: { 'Access-Control-Allow-Origin': '*' },
+        auth: {
+            "id": "c07881f8-fb4f-4ca3-975a-34e7c993fb7b",
+            "password": "cce31512-3d62-44d9-b83c-dbb971c8bb6c"
+        }
+    });
+
+
+    // await axios.post(session_url, {}, {
+    //     auth: {
+    //         "id": "c07881f8-fb4f-4ca3-975a-34e7c993fb7b",
+    //         "password": "cce31512-3d62-44d9-b83c-dbb971c8bb6c"
+    //     }
+    //     // auth: {
+    //     //     username: uname,
+    //     //     password: pass
+    //     // }
+    // });
+
+    console.log(data)
+    // return { title: data.title }
+    return data
   }
 }
 </script>
