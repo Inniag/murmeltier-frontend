@@ -57,6 +57,7 @@
 
 <script>
 // import axios from 'axios';
+import getUserOrRequestFromServer from "~/imports/getUserOrRequestFromServer"
 
 export default {
     // http://ec2-18-184-6-227.eu-central-1.compute.amazonaws.com:5000/user
@@ -122,27 +123,7 @@ export default {
     
   },
 
-    async mounted(context) {
-    // this.gameId = this.$route.params.id
 
-    // load persisted data from localstorage to state
-    if (localStorage.getItem('murmelLocalData')) {
-      console.log("we have localstorage data, get it from there")
-
-      try {
-        this.murmelLocalData = JSON.parse(localStorage.getItem('murmelLocalData'));
-        console.log("murmelLocalData: ")
-        console.log(this.murmelLocalData)
-      } catch(e) {
-        localStorage.removeItem('murmelLocalData');
-      }
-    
-    // no local storage data yet, have to get userId and set localstorage:
-    } else {
-      console.log("no local storage data yet (mood), have to get userId and set localstorage")
-    }
-
-  },
 
   methods: {
     async submitMurmel() {
@@ -153,13 +134,18 @@ export default {
             mood_value: this.mood,
             hashtag: this.hashtag
         }
+
+        const user = await getUserOrRequestFromServer()
+
+        console.log("user")
+        console.log(user)
         
         const id = await this.$axios.post(`/murmel`, data, {
         // crossdomain: true,
             headers: { 'Access-Control-Allow-Origin': '*' },
             auth: {
-                "username": this.murmelLocalData.userId,
-                "password": this.murmelLocalData.accessKey
+                "username": user.userId,
+                "password": user.accessKey
                 // "username": "bc15b072-244b-4258-8c05-e612f7f720ab",
                 // "password": "e3be321d-984d-49a6-9b3e-3163e9f09be0"
             }
