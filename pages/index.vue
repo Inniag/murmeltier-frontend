@@ -38,7 +38,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
- $green: #2c0a5c;
+ $green: rgb(175, 205, 134);
+ 
 $black: #000000;
 $gray:  #eee;
 
@@ -159,7 +160,7 @@ body {
         content: ' ';
         display: block;
         // background-image: linear-gradient( 44deg, rgba(0, 255, 51, 0) 50%, rgba(0, 255, 51, 1) 100%);
-        background-image: linear-gradient( 44deg, rgba(0, 255, 51, 0) 50%, rgb(125, 70, 172) 100%);
+        background-image: linear-gradient( 44deg, rgba(0, 255, 51, 0) 50%, rgb(175, 205, 134) 100%);
         width: 50%;
         height: 50%;
         position: absolute;
@@ -181,36 +182,36 @@ body {
   }
 }
 
-@keyframes blips {
-    14% {
-        background:
-            radial-gradient(2vmin circle at 75% 70%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%);
-    }
-    14.0002% {
-        background:
-            radial-gradient(2vmin circle at 75% 70%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%),
-            radial-gradient(2vmin circle at 0% 50%, rgba(#fff, 1) 10%, rgba(255,0,0, 1) 30%, rgba(#fff, 0) 100%),
-            radial-gradient(2vmin circle at 63% 72%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%);
-    }
-    25% {
-        background:
-            radial-gradient(2vmin circle at 75% 70%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%),
-            radial-gradient(2vmin circle at 63% 72%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%),
-            radial-gradient(2vmin circle at 56% 86%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%);
-    }
-    26% {
-        background:
-            radial-gradient(2vmin circle at 75% 70%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%),
-            radial-gradient(2vmin circle at 63% 72%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%),
-            radial-gradient(2vmin circle at 56% 86%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%);
-        opacity: 1;
-    }
-    100% {
-        background:
-            radial-gradient(2vmin circle at 75% 70%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%),
-            radial-gradient(2vmin circle at 63% 72%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%),
-            radial-gradient(2vmin circle at 56% 86%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%);
-        opacity: 0;
-    }
-}
+// @keyframes blips {
+//     14% {
+//         background:
+//             radial-gradient(2vmin circle at 75% 70%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%);
+//     }
+//     14.0002% {
+//         background:
+//             radial-gradient(2vmin circle at 75% 70%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%),
+//             radial-gradient(2vmin circle at 0% 50%, rgba(#fff, 1) 10%, rgba(255,0,0, 1) 30%, rgba(#fff, 0) 100%),
+//             radial-gradient(2vmin circle at 63% 72%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%);
+//     }
+//     25% {
+//         background:
+//             radial-gradient(2vmin circle at 75% 70%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%),
+//             radial-gradient(2vmin circle at 63% 72%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%),
+//             radial-gradient(2vmin circle at 56% 86%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%);
+//     }
+//     26% {
+//         background:
+//             radial-gradient(2vmin circle at 75% 70%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%),
+//             radial-gradient(2vmin circle at 63% 72%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%),
+//             radial-gradient(2vmin circle at 56% 86%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%);
+//         opacity: 1;
+//     }
+//     100% {
+//         background:
+//             radial-gradient(2vmin circle at 75% 70%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%),
+//             radial-gradient(2vmin circle at 63% 72%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%),
+//             radial-gradient(2vmin circle at 56% 86%, rgba(#fff, 1) 10%, rgba($green, 1) 30%, rgba(#fff, 0) 100%);
+//         opacity: 0;
+//     }
+// }
 </style>
