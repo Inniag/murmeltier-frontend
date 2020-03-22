@@ -42,14 +42,14 @@
         v-model="hashtag"
         :clearable="true"
     ></v-text-field>
-<!-- 
+<!--
     <div class="text-center">
         <v-btn width="60%" outlined color="indigo" dark>Abbrechen</v-btn>
 
         <v-btn width="60%"  color="success">Teilen</v-btn>
     </div> -->
 
-    <v-col class="text-center" cols="12" sm="4">
+    <v-col class="text-center" cols="12" sm="4" id="buttons">
 
         <div class="my-2">
             <v-btn  width="130px" light color="primary" outlined>Abbrechen</v-btn>
@@ -70,7 +70,7 @@ export default {
     // http://ec2-18-184-6-227.eu-central-1.compute.amazonaws.com:5000/user
 
     components: {
-    },  
+    },
     data () {
         return {
             slides: [
@@ -97,11 +97,11 @@ export default {
   },
 
   async asyncData ({ $axios }) {
-    
+
     // seems we must get this from localstore as "this" is not supported here
     // TODO: improve this
        try {
-            
+
             const user = await getUserOrRequestFromServer()
 
             const myAuth =  {
@@ -129,10 +129,8 @@ export default {
       } catch(e) {
           return {}
       }
-    
+
   },
-
-
 
   methods: {
     async submitMurmel() {
@@ -148,7 +146,7 @@ export default {
 
         console.log("user")
         console.log(user)
-        
+
         const id = await this.$axios.post(`/murmel`, data, {
         // crossdomain: true,
             headers: { 'Access-Control-Allow-Origin': '*' },
@@ -162,7 +160,7 @@ export default {
 
         console.log("id")
         console.log(id)
-        
+
     }
   }
 
@@ -218,7 +216,9 @@ export default {
   top: 6px;
 }
 
-
+#buttons {
+  margin: auto;
+}
 
 </style>
 

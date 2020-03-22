@@ -5,17 +5,16 @@
     <span id="placeholder">Keine Reaktionen auf dein Murmel</span>
     <div id="firechat-wrapper"></div>
 
-    <v-col class="text-center" cols="12" sm="4">
-      <div class="my-2">
-        <v-btn width="130px" light color="primary" outlined>Senden</v-btn>
-      </div>
-    </v-col>
-
-    <v-col class="text-center" cols="12" sm="4">
+    <v-col class="text-center" cols="12" sm="4" id="buttons">
       <div class="my-2">
         <v-btn width="130px" light color="primary" outlined>Chat beenden</v-btn>
       </div>
+
+      <div class="my-2">
+        <v-btn width="130px" light color="primary">Senden</v-btn>
+      </div>
     </v-col>
+
   </v-container>
 </template>
 
@@ -39,6 +38,10 @@
 
 #firechat textarea {
   border-radius: 4px;
+}
+
+#buttons {
+  margin: auto;
 }
 </style>
 

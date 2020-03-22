@@ -47,7 +47,7 @@
             <!-- <div class='sweep'></div> -->
           </div>
     <!-- </div> -->
-      
+
    </v-container>
 </template>
 
@@ -74,10 +74,10 @@ export default {
     }
   },
   async asyncData ({ $axios }) {
-    
+
     // seems we must get this from localstore as "this" is not supported here
     // TODO: improve this
-       
+
             const user = await getUserOrRequestFromServer()
 
             const myAuth =  {
@@ -142,6 +142,10 @@ body {
 // }
 
 
+#radar {
+  margin: auto;
+}
+
 .radar {
 
 // TODO: https://alligator.io/vuejs/dynamic-styles/
@@ -183,14 +187,13 @@ body {
       transform: translate3d(-50%, -50%, 0) rotate(320deg) translateX(85%) rotate(-320deg);
     }
 
-    
 
     background:
         -webkit-radial-gradient(center, rgba($green, 0.3) 0%, rgba($green, 0) 75%), // background glow
         -webkit-repeating-radial-gradient(rgba($green, 0) 5.8%, rgba($green, 0) 18%, rgba($green, 1) 18.6%, rgba($green, 0) 18.9%), // concentric circles
         -webkit-linear-gradient(90deg, rgba($green, 0) 49.5%, rgba($green, 1) 50%, rgba($green, 1) 50%, rgba($green, 0) 50.2%), // center line - vertical
         -webkit-linear-gradient(0deg, rgba($green, 0) 49.5%, rgba($green, 1) 50%, rgba($green, 1) 50%, rgba($green, 0) 50.2%);
-    
+
     // background:
     //     radial-gradient(center, rgba($green, 0.3) 0%, rgba($green, 0) 75%), // background glow
     //     repeating-radial-gradient(rgba($green, 0) 5.8%, rgba($green, 0) 18%, rgba($green, 1) 18.6%, rgba($green, 0) 18.9%), // concentric circles
@@ -198,8 +201,9 @@ body {
     //     linear-gradient(0deg, rgba($green, 0) 49.5%, rgba($green, 1) 50%, rgba($green, 1) 50%, rgba($green, 0) 50.2%); // center line - horizontal
     width: 90vw;
     height: 90vw;
-    max-height: 100%;
-    max-width: 100%;
+    max-height: 400px;
+    max-width: 400px;
+    margin: 0;
     position: relative;
     // left: 50%;
     // top: 50%;
